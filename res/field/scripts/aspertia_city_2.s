@@ -550,13 +550,174 @@ L_080B:
 Script_6:
     ActorsPauseAll
     SEPlay SEQ_SE_MESSAGE
-    // "It's a Wii console!\nIt has a Wii Remote!"
-    InfoMsg AspertiaCity2_Text_ItsWiiConsoleHas, 2
-    LastKeyWait
+
+TvRulesMenu:
+    // "Reglas del reto Nuzlocke.\n¿Qué regla quieres leer?"
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRulesIntro, 0, 1, 0
+    WorkSetConst 0x8021, 0
+    ListMenuAnchorTopRight 31, 1, 0, 1, 32801
+    ListMenuAdd AspertiaCity2_Text_TvMenuCapture, 65535, 0
+    ListMenuAdd AspertiaCity2_Text_TvMenuDeath, 65535, 1
+    ListMenuAdd AspertiaCity2_Text_TvMenuNicknames, 65535, 2
+    ListMenuAdd AspertiaCity2_Text_TvMenuSetMode, 65535, 3
+    ListMenuAdd AspertiaCity2_Text_TvMenuGameOver, 65535, 4
+    ListMenuAdd AspertiaCity2_Text_TvMenuWildPokemon, 65535, 5
+    ListMenuAdd AspertiaCity2_Text_TvMenuMovesAbilities, 65535, 6
+    ListMenuAdd AspertiaCity2_Text_TvMenuTrainers, 65535, 7
+    ListMenuAdd AspertiaCity2_Text_TvMenuItems, 65535, 8
+    ListMenuAdd AspertiaCity2_Text_TvMenuLevelCap, 65535, 9
+    ListMenuAdd AspertiaCity2_Text_TvMenuShiny, 65535, 10
+    ListMenuAdd AspertiaCity2_Text_TvMenuLegendaries, 65535, 11
+    ListMenuAdd AspertiaCity2_Text_TvMenuHealingItems, 65535, 12
+    ListMenuAdd AspertiaCity2_Text_TvMenuExit, 65535, 13
+    ListMenuShow
+    VMStackPush 0x8021
+    VMStackPushConst 0
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleCapture
+    VMStackPush 0x8021
+    VMStackPushConst 1
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleDeath
+    VMStackPush 0x8021
+    VMStackPushConst 2
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleNicknames
+    VMStackPush 0x8021
+    VMStackPushConst 3
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleSetMode
+    VMStackPush 0x8021
+    VMStackPushConst 4
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleGameOver
+    VMStackPush 0x8021
+    VMStackPushConst 5
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleWildPokemon
+    VMStackPush 0x8021
+    VMStackPushConst 6
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleMovesAbilities
+    VMStackPush 0x8021
+    VMStackPushConst 7
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleTrainers
+    VMStackPush 0x8021
+    VMStackPushConst 8
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleItems
+    VMStackPush 0x8021
+    VMStackPushConst 9
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleLevelCap
+    VMStackPush 0x8021
+    VMStackPushConst 10
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleShiny
+    VMStackPush 0x8021
+    VMStackPushConst 11
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleLegendaries
+    VMStackPush 0x8021
+    VMStackPushConst 12
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvRuleHealingItems
     MsgWinCloseAll
     FinishAllEvents
     ActorsUnpauseAll
     VMHalt
+
+TvRuleCapture:
+    // "Regla de captura:\nSolo puedes capturar al primer..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleCapture, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleDeath:
+    // "Regla de la muerte:\nSi un Pokémon cae debilitado en..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleDeath, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleNicknames:
+    // "Motes obligatorios:\nDebes ponerle un mote a cada..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleNicknames, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleSetMode:
+    // "Combate fijo:\nEn Opciones, el estilo de batalla..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleSetMode, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleGameOver:
+    // "Fin de la partida:\nSi todo tu equipo cae debilitado..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleGameOver, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleWildPokemon:
+    // "Pokémon salvajes y de inicio:\nPuede salirte cualquier Pokémon..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleWildPokemon, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleMovesAbilities:
+    // "Movimientos y habilidades:\nLos ataques que aprenden los..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleMovesAbilities, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleTrainers:
+    // "Entrenadores y líderes:\nLos equipos de los entrenadores y..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleTrainers, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleItems:
+    // "Objetos:\nLos objetos del suelo, de las..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleItems, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleLevelCap:
+    // "Límite de nivel:\nNo puedes subir a tus Pokémon por..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleLevelCap, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleShiny:
+    // "Regla Shiny:\nSi te sale un Pokémon variocolor..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleShiny, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleLegendaries:
+    // "Prohibición de legendarios:\nSe prohíbe usar Pokémon legendarios..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleLegendaries, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
+
+TvRuleHealingItems:
+    // "Restricción de objetos:\nSe prohíbe usar objetos curativos..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvRuleHealingItems, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
 
 Script_7:
     ActorsPauseAll
