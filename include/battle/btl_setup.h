@@ -170,6 +170,9 @@ void BtlSetup_SetWildNormal(BtlSetup *setup, GameData *gameData, PokeParty *part
 void BtlSetup_SetWildMulti(BtlSetup *setup, GameData *gameData, PokeParty *party, u32 trainerId, BtlFieldStatus *status,
                            HeapID heapId);
 void BtlSetup_SetFlag(BtlSetup *setup, u32 flag);
+// A Nuzlocke build's flag (docs/nuzlocke.md) that makes the wild Pokémon impossible to catch: the first encounter of its
+// place was used, or it is banned
+#define BTL_SETUP_FLAG_NO_CAPTURE 0x80000000
 void BtlSetup_Free(BtlSetup *setup);
 PokeParty *BtlSetup_GetParty(BtlSetup *setup, u32 index);
 void BtlSetup_SetNet1v1Double(BtlSetup *setup, GameData *gameData, NetHandle *handle, u8 a3, HeapID heapId);

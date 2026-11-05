@@ -67,6 +67,8 @@ of downloading a binary. To use your own build, pass `--dsd PATH` or copy it to 
   so fixes in incomplete files do not apply yet.
 - `python3 configure.py --shift 0x100` moves the code to test changes in code size. See
   [Shifting](configs.md#shifting).
+- `python3 configure.py --nuzlocke` turns on the Nuzlocke rules guarded by `NUZLOCKE`, and
+  `python3 configure.py --randomize SEED` randomizes the data from a seed. See [Nuzlocke](nuzlocke.md).
 
 Run `ninja` after configuring. These builds skip the matching checks. Configure again without the option to restore
 the standard matching build.

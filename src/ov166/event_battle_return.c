@@ -254,6 +254,10 @@ static BOOL EventBattleReturn_Main(GameProc *proc, u32 *state, void *param, void
             if (wk->dex.nickname == TRUE) {
                 nickname = TRUE;
             }
+#ifdef NUZLOCKE
+            // The challenge makes a nickname mandatory: it is always asked for
+            nickname = TRUE;
+#endif
             if (nickname) {
                 wk->nameEntry = pokemonNameEntry(wk->heapId, wk->pkm, 10, NULL, wk->boxMessage, boxes, wk->box,
                                                  getTrainerGameInfoAddress(GameData_GetSaveControl(prm->gameData)));
@@ -268,6 +272,15 @@ static BOOL EventBattleReturn_Main(GameProc *proc, u32 *state, void *param, void
         break;
     case STEP_WAIT_NAME_ENTRY:
         if (procRunning != TRUE) {
+#ifdef NUZLOCKE
+            // A cancelled entry is asked again, since a nickname is mandatory
+            if (NameEntryParam_IsCanceled(wk->nameEntry) == TRUE) {
+                NameEntryParam_Free(wk->nameEntry);
+                wk->nameEntry = NULL;
+                *state = STEP_WAIT_POKEDEX_REGISTRATION;
+                break;
+            }
+#endif
             if (NameEntryParam_IsCanceled(wk->nameEntry) == FALSE) {
                 oldName = GFL_StrBufCreate(32, wk->heapId);
                 NameEntryParam_GetName(wk->nameEntry, wk->name);
@@ -276,6 +289,16 @@ static BOOL EventBattleReturn_Main(GameProc *proc, u32 *state, void *param, void
                 if (NameEntryParam_CompareName(wk->nameEntry, oldName) == FALSE) {
                     RecordAddOne(GameData_GetRecords(prm->gameData), 0x1e);
                 }
+#ifdef NUZLOCKE
+                else {
+                    // The species' own name is no nickname: asked again
+                    GFL_StrBufFree(oldName);
+                    NameEntryParam_Free(wk->nameEntry);
+                    wk->nameEntry = NULL;
+                    *state = STEP_WAIT_POKEDEX_REGISTRATION;
+                    break;
+                }
+#endif
                 GFL_StrBufFree(oldName);
             }
             NameEntryParam_Free(wk->nameEntry);

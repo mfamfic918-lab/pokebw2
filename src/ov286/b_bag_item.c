@@ -60,6 +60,11 @@ void BBagItem_MakePocketLists(BBagWork *work) {
                 continue;
             }
             bits = pockets[slot->item];
+#ifdef NUZLOCKE
+            // The challenge forbids healing items in battle: the HP and PP restoring and the status restoring pockets
+            // stay empty, so they can't be picked
+            bits &= ~(BATTLE_POCKET_HP_PP_RESTORE | BATTLE_POCKET_STATUS_RESTORE);
+#endif
             for (k = 0; k < 4; k++) {
                 if (bits & (1 << k)) {
                     pocket = data_ov286_021f6e8b[k];

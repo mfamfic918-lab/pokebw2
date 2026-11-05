@@ -81,4 +81,5 @@ AspertiaCity2_Text_TvMenuShiny = Regla Shiny
 AspertiaCity2_Text_TvMenuLegendaries = Legendarios
 AspertiaCity2_Text_TvMenuHealingItems = Objetos curativos
 AspertiaCity2_Text_TvMenuExit = Salir
+AspertiaCity2_Text_TvChallengeFailed = ¡Has perdido el reto Nuzlocke!\nTodo tu equipo cayó debilitado.{be01}\nYa no podrás capturar Pokémon.\nEmpieza una partida nueva.
 \pad{b6}

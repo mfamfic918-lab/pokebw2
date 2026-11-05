@@ -61,7 +61,12 @@ void Config_SetBattleScene(Config *config, u32 value) {
 }
 
 BOOL Config_GetBattleStyle(const Config *config) {
+#ifdef NUZLOCKE
+    // The challenge fixes the battle style to Set, whatever the save says
+    return TRUE;
+#else
     return config->unk6;
+#endif
 }
 
 void Config_SetBattleStyle(Config *config, u32 value) {

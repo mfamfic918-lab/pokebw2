@@ -964,7 +964,12 @@ static s32 PML_ItemGetBattleStat(ItemParams *params, u32 param) {
     case ITEM_PARAM_REVIVE_ALL:
         return params->reviveAll;
     case ITEM_PARAM_LEVEL_UP:
+#ifdef NUZLOCKE
+        // The level cap can't be kept by a Rare Candy, which does nothing in the challenge
+        return 0;
+#else
         return params->levelUp;
+#endif
     case ITEM_PARAM_EVOLVE:
         return params->evolve;
     case ITEM_PARAM_ATTACK_STAGES:

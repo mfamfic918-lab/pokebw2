@@ -53,6 +53,7 @@ CI compiles every C file for both versions; fork PRs must verify ROM matching lo
 | [Nonmatching functions](docs/nonmatching-functions.md) | Remaining mismatches |
 | [Game data](docs/data.md) | Data formats and archives |
 | [Scripts](docs/scripts.md) | Trainer AI, battle animation and field scripts |
+| [Nuzlocke](docs/nuzlocke.md) | The randomizer and the Nuzlocke rules, as build options |
 | [Configs and ROMs](docs/configs.md) | dsd configuration and ROM structure |
 | [Tools](tools/README.md) | Tool reference |
 

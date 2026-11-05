@@ -879,6 +879,13 @@ static BOOL ThrowBall(BtlServerFlow *flow, BattleMon *mon, u16 item) {
     if (BtlSetup_GetBattleType(flow->mainModule) == BTL_TYPE_WILD) {
         if (targetPos != BTL_POS_NONE) {
             caught = CheckBallCapture(flow, mon, target, item, &shakes, &critical);
+#ifdef NUZLOCKE
+            // The challenge forbids this catch: the ball is thrown, and the Pokémon breaks free at once
+            if (BtlSetup_IsBattleType(flow->mainModule, BTL_SETUP_FLAG_NO_CAPTURE)) {
+                caught = FALSE;
+                shakes = 0;
+            }
+#endif
             if (caught) {
                 flow->result = BTL_FLOW_RESULT_CAPTURE;
                 flow->capturePos = targetPos;

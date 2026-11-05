@@ -41,6 +41,7 @@
 #include "gfl/str.h"
 #include "gfl/tcb.h"
 #include "nitro/os.h"
+#include "nuzlocke_field.h"
 #include "pml/poke_party.h"
 #include "save/encounter.h"
 #include "save/pokedex_savedata.h"
@@ -243,6 +244,9 @@ GameEvent *EventWildBattleCall_CreateCore(GameSystem *gsys, Field *field, BtlSet
     if (encountMode == ENCOUNT_MODE_EFFECT) {
         BtlSetup_SetFlag(setup, 1 << 14);
     }
+#ifdef NUZLOCKE
+    Nuzlocke_PrepareWildBattle(gsys, field, setup);
+#endif
     EventBattleCall_BroadcastWildBattle(setup, BATTLE_BEACON_START);
     RecordAddOne(GameData_GetRecords(GSYS_GetGameData(gsys)), 5);
     EffectEncount_ConsumeSpot(Field_GetEncountSystem(field));
@@ -486,6 +490,9 @@ static GameEventReturnCode EventBattleCall_Callback(GameEvent *event, u32 *state
             data_ov337_02182444[data_ov337_02182440 ^ 1](&seed, wk);
         }
         EventBattleCall_SyncGameDataOnReturn(wk, gameData);
+#ifdef NUZLOCKE
+        Nuzlocke_OnBattleReturn(gameData, wk->setup);
+#endif
         if (wk->isTrialHouse) {
             SyncTrialHouseWkStatsFromBattle(*GetTrialHouseWkPPtr(gameData), wk->setup);
         }

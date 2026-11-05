@@ -1690,6 +1690,12 @@ static void ConfigPanelOptions_Apply(const ConfigPanelOptions *options) {
 }
 
 static void ConfigPanelOptions_SetItem(ConfigPanelOptions *options, u32 item) {
+#ifdef NUZLOCKE
+    // The battle style is fixed to Set by the challenge
+    if (sConfigPanelItems[item].option == OPTION_BATTLE_STYLE) {
+        return;
+    }
+#endif
     if (options->values[sConfigPanelItems[item].option] != sConfigPanelItems[item].value) {
         options->values[sConfigPanelItems[item].option] = sConfigPanelItems[item].value;
         options->changed = item;
@@ -1703,6 +1709,12 @@ static void ConfigPanelOptions_Step(ConfigPanelOptions *options, unsigned int op
     int item = -1;
     s8 pos;
 
+#ifdef NUZLOCKE
+    // The battle style is fixed to Set by the challenge
+    if (option == OPTION_BATTLE_STYLE) {
+        return;
+    }
+#endif
     for (i = 0; i < sConfigPanelOptions[option].count; i++) {
         item = sConfigPanelOptions[option].items[i];
         if (sConfigPanelItems[item].value == options->values[option]) {

@@ -32,6 +32,7 @@
 #include "gfl/arc.h"
 #include "gfl/random.h"
 #include "gfl/std.h"
+#include "nuzlocke.h"
 #include "pml/move.h"
 #include "pml/personal.h"
 #include "pml/poke_party.h"
@@ -5564,6 +5565,9 @@ BOOL ServerControl_GiveExp(BtlServerFlow *flow, BattleParty *party, const BtlFlo
     u8 monId;
     u32 message;
     BOOL result = FALSE;
+#ifdef NUZLOCKE
+    u32 levelCap = Nuzlocke_GetLevelCap(GetBadgeCount(flow->mainModule));
+#endif
 
     for (i = 0; i < 6; i++) {
         const BtlFlowExpEntry *entry = &entries[i];
@@ -5571,6 +5575,17 @@ BOOL ServerControl_GiveExp(BtlServerFlow *flow, BattleParty *party, const BtlFlo
             BattleMon *mon = BattleParty_GetMon(party, i);
             if ((s32)GetBattleMonStat(mon, BATTLEMON_LEVEL) < 100) {
                 u32 exp = entry->exp;
+#ifdef NUZLOCKE
+                // The level cap: the experience stops short of the level above it
+                u32 expLimit = Nuzlocke_GetExpLimit(GetBattleMonSpecies(mon), mon->form, levelCap);
+
+                if (mon->core.exp >= expLimit) {
+                    continue;
+                }
+                if (exp > expLimit - mon->core.exp) {
+                    exp = expLimit - mon->core.exp;
+                }
+#endif
                 if (entry->boosted) {
                     message = 0x2b;
                 } else {

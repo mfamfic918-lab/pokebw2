@@ -550,6 +550,11 @@ L_080B:
 Script_6:
     ActorsPauseAll
     SEPlay SEQ_SE_MESSAGE
+    // The flag NUZLOCKE_FAILED_FLAG (include/nuzlocke_data.h) says the challenge is lost
+    VMStackPushFlag EVENT_FLAG_0x01f2
+    VMStackPushConst 1
+    VMStackCmp CMP_EQ
+    VMJumpIf CMP_STACK, TvChallengeFailed
 
 TvRulesMenu:
     // "Reglas del reto Nuzlocke.\n¿Qué regla quieres leer?"
@@ -627,6 +632,13 @@ TvRulesMenu:
     FinishAllEvents
     ActorsUnpauseAll
     VMHalt
+
+TvChallengeFailed:
+    // "¡Has perdido el reto Nuzlocke!\nTodo tu equipo cayó debilitado..."
+    ActorMsg MSGFILE_SCRIPT, AspertiaCity2_Text_TvChallengeFailed, 0, 1, 0
+    LastKeyWait
+    MsgWinCloseAll
+    VMJump TvRulesMenu
 
 TvRuleCapture:
     // "Regla de captura:\nSolo puedes capturar al primer..."

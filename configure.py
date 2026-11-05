@@ -638,10 +638,29 @@ def get_dsd(tools_dir: Path, from_source: bool) -> Path:
     return dsd
 
 
+# The options of a Nuzlocke build (docs/nuzlocke.md), which main() sets: `nuzlocke` defines NUZLOCKE, which turns on the
+# challenge's rules in the code, and `randomize` is the seed of tools/randomizer/randomize.py, whose copies of the data
+# are packed in place of the originals. Either one makes the ROMs not match.
+MOD = {"nuzlocke": False, "randomize": None}
+RANDOMIZED_OUTPUT = "build/randomized"
+# The packers that read a randomized copy of their data directory
+RANDOMIZED_PACKS = {("tools/data/species_data.py", "res/pokemon"), ("tools/data/trainer_data.py", "res/trainers/data"),
+                    ("tools/data/encounter_data.py", "res/field/encounters"),
+                    ("tools/data/shop_data.py", "res/field/shops"), ("tools/data/event_data.py", "res/field/events")}
+
+
+def pack_directory(script: str, data_dir: str) -> str:
+    """The directory a packer reads: the randomizer's copy of its data when the build is randomized."""
+    if MOD["randomize"] is not None and (script, data_dir) in RANDOMIZED_PACKS:
+        return f"{RANDOMIZED_OUTPUT}/{data_dir}"
+    return data_dir
+
+
 def add_version(n: Writer, version: str, dsd: Path, bugfix: bool, shift: int) -> tuple[list[Path], list[str]]:
-    """Adds the build steps of one version. Returns its check targets and dsd config files. A build with the bugs fixed
-    or with its code shifted does not match, so its only targets are the ROM and its archives."""
-    matching = not bugfix and not shift
+    """Adds the build steps of one version. Returns its check targets and dsd config files. A build with the bugs fixed,
+    with its code shifted, with the Nuzlocke rules or with randomized data does not match, so its only targets are the
+    ROM and its archives."""
+    matching = not bugfix and not shift and not MOD["nuzlocke"] and MOD["randomize"] is None
     baserom = Path("orig") / f"baserom_{version}.nds"
     extract_dir = Path("extract") / version
     config_dir = Path("config") / version
@@ -691,7 +710,8 @@ def add_version(n: Writer, version: str, dsd: Path, bugfix: bool, shift: int) ->
     # Source files are listed in delinks.txt by their path. Complete files are linked from the compiled object, and
     # incomplete ones are still compiled so objdiff can compare them. A file in config/deadstrip.toml is compiled to an
     # object under unstripped/, which the strip turns into the one at the usual path.
-    version_defines = VERSIONS[version]["defines"] + (["BUGFIX"] if bugfix else [])
+    version_defines = (VERSIONS[version]["defines"] + (["BUGFIX"] if bugfix else []) +
+                       (["NUZLOCKE"] if MOD["nuzlocke"] else []))
     defines = " ".join(f"-d {define}" for define in version_defines)
     as_defines = " ".join(f"-D{define}" for define in version_defines)
     objects = []
@@ -816,6 +836,7 @@ def add_version(n: Writer, version: str, dsd: Path, bugfix: bool, shift: int) ->
     constant_sources = sorted(str(p.relative_to(ROOT)) for p in [*(ROOT / "generated").glob("*.txt"),
                                                                   *(ROOT / "include" / "constants").glob("*.h")])
     for script, data_dir, paths, per_version, *other_dirs in DATA_PACKS:
+        data_dir = pack_directory(script, data_dir)
         outputs = [files_dir / path for path in paths]
         sources = sorted(str(p.relative_to(ROOT)) for d in [data_dir, *(other_dirs[0] if other_dirs else [])]
                          for p in ([ROOT / d] if (ROOT / d).is_file() else (ROOT / d).rglob("*")) if p.is_file())
@@ -905,7 +926,20 @@ def main():
                              "code sizes; the ROMs no longer match. A multiple of 32, such as 0x100")
     parser.add_argument("--bugfix", action="store_true",
                         help="fix the game's bugs that are marked with BUGFIX in the source; the ROMs no longer match")
+    parser.add_argument("--nuzlocke", action="store_true",
+                        help="turn on the Nuzlocke challenge's rules that are marked with NUZLOCKE in the source, see "
+                             "docs/nuzlocke.md; the ROMs no longer match")
+    parser.add_argument("--randomize", metavar="SEED", default=None,
+                        help="randomize the wild Pokémon, trainers' teams, abilities, learnsets, held items, shops and "
+                             "ground items from SEED, see docs/nuzlocke.md; the ROMs no longer match")
     args = parser.parse_args()
+    MOD["nuzlocke"] = args.nuzlocke
+    MOD["randomize"] = args.randomize
+    if args.randomize is not None:
+        from tools.randomizer.randomize import randomize
+        summary = randomize(args.randomize, ROOT, ROOT / RANDOMIZED_OUTPUT)
+        print(f"Randomized with seed {args.randomize!r}: " +
+              ", ".join(f"{count} {kind.replace('_', ' ')}" for kind, count in summary.items()))
 
     versions = args.versions or [v for v in VERSIONS if (ROOT / "orig" / f"baserom_{v}.nds").exists()]
     if not versions:
@@ -1011,6 +1045,8 @@ def main():
     n.rule("progress", "$python tools/build/progress.py $in", "Progress")
     # A regeneration keeps the options that chose the tools, so that a build with another dsd keeps it
     configure_args = [*args.versions, *(["--bugfix"] if args.bugfix else []),
+                      *(["--nuzlocke"] if args.nuzlocke else []),
+                      *([f"--randomize {shlex.quote(args.randomize)}"] if args.randomize is not None else []),
                       *([f"--shift {args.shift:#x}"] if args.shift else []),
                       *([f"--dsd {shlex.quote(str(args.dsd.resolve()))}"] if args.dsd else []),
                       *(["--dsd-from-source"] if args.dsd_from_source else []),
@@ -1104,7 +1140,9 @@ def main():
     write_compile_flags()
     fixes = ", with the bugs fixed" if args.bugfix else ""
     shifted = f", with the code shifted by {args.shift:#x} bytes" if args.shift else ""
-    print(f"Wrote build.ninja for {', '.join(versions)}{fixes}{shifted}, now run ninja")
+    rules = ", with the Nuzlocke rules" if args.nuzlocke else ""
+    seeded = f", randomized with seed {args.randomize!r}" if args.randomize is not None else ""
+    print(f"Wrote build.ninja for {', '.join(versions)}{fixes}{shifted}{rules}{seeded}, now run ninja")
 
 
 if __name__ == "__main__":
