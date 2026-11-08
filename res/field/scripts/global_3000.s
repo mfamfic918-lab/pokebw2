@@ -832,7 +832,8 @@ Script_816:
     ActorSetEyeToEye
     VMCall L_0F57
     ActorGetTrainerID 0x8020
-    TrainerFlagGet 0x8020, 0x8010
+    // Kaizo: talking to a Trainer always starts a battle, even one already won
+    WorkSetConst 0x8010, 0
     VMStackPush 0x8010
     VMStackPushConst 1
     VMStackCmp CMP_EQ

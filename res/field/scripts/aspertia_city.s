@@ -363,15 +363,10 @@ L_0538:
     // "Bianca: OK, then![f000]븁\u0000\nTa-daaa![f000]븁\u0000\nIn here is the Pokémon\nthat will be your partner![f000]븁\u0000"
     ActorMsg MSGFILE_SCRIPT, AspertiaCity_Text_BiancaOkThenTa, 2, 1, 0
     MsgWinCloseAll
-    WorkSetConst 0x8024, 0
+    // Kaizo: no selection screen. Hugh picks first, at random, and the player gets the starter
+    // that his pick beats (0 Snivy, 1 Tepig, 2 Oshawott), so the rival's team still matches
+    Random 0x8024, 3
     WorkSetConst 0x8025, 0
-    FadeOutBlackQ
-    FadeWait
-    FieldClose
-    callPoke3Select 0x8024
-    FieldOpen
-    FadeInWhiteQ
-    FadeWait
     VMStackPush 0x8024
     VMStackPushConst 0
     VMStackCmp CMP_EQ

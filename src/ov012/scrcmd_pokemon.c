@@ -1,15 +1,19 @@
 // Names from swan (https://github.com/ds-pokemon-hacking/swan, GPL-3.0). swan gives wf_location, stats_list and iv_set
 // one byte after each table, and calls iv_set's second column iv_val
 #include "types.h"
+#include "constants/arc.h"
 #include "constants/places.h"
 #include "constants/pokemon.h"
+#include "constants/species.h"
 #include "field/field.h"
 #include "field/field_script.h"
 #include "field/player_state.h"
 #include "field/scrcmd_pokemon.h"
 #include "field/zone.h"
+#include "gfl/arc.h"
 #include "gfl/heap.h"
 #include "gfl/msg.h"
+#include "gfl/random.h"
 #include "gfl/std.h"
 #include "gfl/str.h"
 #include "pml/item.h"
@@ -882,6 +886,18 @@ BOOL Scrcmd_Pokemon_BoxAddEx(VM *vm, FieldScriptEnv *env) {
     return FALSE;
 }
 
+// Kaizo: the species of an egg for a random Pokémon that can breed (so no legendaries), as its baby form
+static u16 PickRandomEggSpecies(void) {
+    u16 species;
+    u16 baby;
+
+    do {
+        species = GFL_RandomLC(SPECIES_GENESECT - 1) + 1;
+    } while (PML_PersonalGetParamSingle(species, 0, PERSONAL_EGG_GROUP_1) == EGG_GROUP_UNDISCOVERED);
+    GFL_ArcSysReadRange(&baby, ARCID_BABYMONS, species, 0, 2);
+    return baby;
+}
+
 BOOL Scrcmd_Pokemon_PokePartyAddEgg(VM *vm, FieldScriptEnv *env) {
     GameData *gameData;
     HeapID heapId;
@@ -907,6 +923,10 @@ BOOL Scrcmd_Pokemon_PokePartyAddEgg(VM *vm, FieldScriptEnv *env) {
         *result = FALSE;
         return FALSE;
     }
+    if (species == SPECIES_NONE) {
+        species = PickRandomEggSpecies();
+        form = 0;
+    }
     pkm = PokeParty_NewTempPkm(species, 1, (u64)-1, heapId);
     PokeParty_SetParam(pkm, PKM_PARAM_FORM, form);
     name = copyTrainerNameToNewStrbuf((const u16 *)GetGameDataPlayerInfo(gameData), heapId);
@@ -916,6 +936,8 @@ BOOL Scrcmd_Pokemon_PokePartyAddEgg(VM *vm, FieldScriptEnv *env) {
                                 PokeParty_GetParam(pkm, PKM_PARAM_FORM, NULL), heapId);
     cycles = PML_PersonalGetParam(personal, PERSONAL_HATCH_CYCLES);
     PML_PersonalFree(personal);
+    // Kaizo: every egg given by a script hatches after one cycle
+    cycles = 1;
     PokeParty_SetParam(pkm, PKM_PARAM_HAPPINESS, cycles);
     PokeParty_SetParam(pkm, PKM_PARAM_IS_EGG, 1);
     name = GFL_MsgDataLoadStrbufNew(g_PMLSpeciesNamesResident, SPECIES_EGG);
