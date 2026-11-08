@@ -13,7 +13,7 @@
             "species": "SPECIES_FRAXURE",
             "form": 0,
             "level": 54,
-            "difficulty": 150,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_DRAGON_DANCE", "MOVE_DRAGON_CLAW", "MOVE_X_SCISSOR", "MOVE_SHADOW_CLAW" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_ZWEILOUS",
             "form": 0,
             "level": 54,
-            "difficulty": 150,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_SCARY_FACE", "MOVE_CRUNCH", "MOVE_BODY_SLAM", "MOVE_DRAGON_RUSH" ]
@@ -31,7 +31,7 @@
             "species": "SPECIES_FLYGON",
             "form": 0,
             "level": 54,
-            "difficulty": 150,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_DRAGON_CLAW", "MOVE_BULLDOZE", "MOVE_FLAMETHROWER", "MOVE_ROCK_SLIDE" ]

@@ -13,7 +13,7 @@
             "species": "SPECIES_VIBRAVA",
             "form": 0,
             "level": 46,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_GLIGAR",
             "form": 0,
             "level": 46,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

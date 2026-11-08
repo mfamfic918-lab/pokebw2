@@ -79,15 +79,9 @@ void SetGameDifficulty(KeyInfoSave *keyInfo, u32 difficulty) {
     keyInfo->difficulty = value ^ keyInfo->seed;
 }
 
+// Kaizo: there is only one difficulty, the Challenge Mode, whatever the keys say
 u32 GetGameDifficulty(KeyInfoSave *keyInfo) {
-    int i;
-
-    for (i = 0; i < KEY_INFO_DIFFICULTY_COUNT; i++) {
-        if ((keyInfo->difficulty ^ keyInfo->seed) == UNOVA_LINK_DIFFICULTY_KEYS[i]) {
-            return i;
-        }
-    }
-    return GAME_DIFFICULTY_NORMAL;
+    return GAME_DIFFICULTY_CHALLENGE;
 }
 
 void KeyInfo_SetCityKey(KeyInfoSave *keyInfo, u32 city) {

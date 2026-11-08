@@ -4,7 +4,7 @@
     "class": "TRAINER_CLASS_BACKERS_F",
     "battle_style": "BTL_STYLE_DOUBLE",
     "items": [],
-    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_TAG_STRATEGY" ],
+    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT", "AI_FLAG_TAG_STRATEGY" ],
     "heals": false,
     "money": 12,
     "reward": "ITEM_NONE",
@@ -13,7 +13,7 @@
             "species": "SPECIES_PACHIRISU",
             "form": 0,
             "level": 62,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_EMOLGA",
             "form": 0,
             "level": 62,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

@@ -3,9 +3,9 @@
     "name": "Colress",
     "class": "TRAINER_CLASS_TEAM_PLASMA_COLRESS",
     "battle_style": "BTL_STYLE_SINGLE",
-    "items": [],
+    "items": [ "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE" ],
     "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT" ],
-    "heals": false,
+    "heals": true,
     "money": 50,
     "reward": "ITEM_NONE",
     "party": [
@@ -13,7 +13,7 @@
             "species": "SPECIES_PATRAT",
             "form": 0,
             "level": 1,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

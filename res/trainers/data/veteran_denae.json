@@ -13,7 +13,7 @@
             "species": "SPECIES_DRUDDIGON",
             "form": 0,
             "level": 44,
-            "difficulty": 150,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_FRAXURE",
             "form": 0,
             "level": 44,
-            "difficulty": 150,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -29,7 +29,7 @@
             "species": "SPECIES_AXEW",
             "form": 0,
             "level": 44,
-            "difficulty": 150,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

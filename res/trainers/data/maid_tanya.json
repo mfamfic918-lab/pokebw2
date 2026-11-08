@@ -4,7 +4,7 @@
     "class": "TRAINER_CLASS_MAID",
     "battle_style": "BTL_STYLE_SINGLE",
     "items": [],
-    "ai_flags": [ "AI_FLAG_BASIC" ],
+    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT" ],
     "heals": false,
     "money": 10,
     "reward": "ITEM_NONE",
@@ -13,7 +13,7 @@
             "species": "SPECIES_EMOLGA",
             "form": 0,
             "level": 61,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_RAICHU",
             "form": 0,
             "level": 61,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

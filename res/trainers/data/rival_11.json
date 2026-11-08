@@ -3,9 +3,9 @@
     "name": "Rival",
     "class": "TRAINER_CLASS_PKMN_TRAINER_RIVAL",
     "battle_style": "BTL_STYLE_SINGLE",
-    "items": [ "ITEM_HYPER_POTION" ],
+    "items": [ "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE" ],
     "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT" ],
-    "heals": false,
+    "heals": true,
     "money": 25,
     "reward": "ITEM_NONE",
     "party": [
@@ -13,7 +13,7 @@
             "species": "SPECIES_UNFEZANT",
             "form": 0,
             "level": 39,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "item": "ITEM_SCOPE_LENS"
@@ -22,7 +22,7 @@
             "species": "SPECIES_SIMISAGE",
             "form": 0,
             "level": 39,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "item": "ITEM_MIRACLE_SEED"
@@ -31,7 +31,7 @@
             "species": "SPECIES_SAMUROTT",
             "form": 0,
             "level": 41,
-            "difficulty": 150,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "item": "ITEM_MYSTIC_WATER"

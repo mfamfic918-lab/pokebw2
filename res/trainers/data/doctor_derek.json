@@ -13,7 +13,7 @@
             "species": "SPECIES_SWOOBAT",
             "form": 0,
             "level": 38,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

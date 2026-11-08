@@ -13,7 +13,7 @@
             "species": "SPECIES_HEATMOR",
             "form": 0,
             "level": 66,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_UMBREON",
             "form": 0,
             "level": 66,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -29,7 +29,7 @@
             "species": "SPECIES_MISMAGIUS",
             "form": 0,
             "level": 66,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

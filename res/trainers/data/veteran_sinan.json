@@ -13,7 +13,7 @@
             "species": "SPECIES_LUDICOLO",
             "form": 0,
             "level": 64,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_ENERGY_BALL", "MOVE_ICE_BEAM", "MOVE_HYDRO_PUMP", "MOVE_FAKE_OUT" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_ELECTIVIRE",
             "form": 0,
             "level": 64,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_THUNDER", "MOVE_EARTHQUAKE", "MOVE_ROCK_SLIDE", "MOVE_THUNDER_WAVE" ]
@@ -31,7 +31,7 @@
             "species": "SPECIES_FORRETRESS",
             "form": 0,
             "level": 64,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_GYRO_BALL", "MOVE_SOLAR_BEAM", "MOVE_PAYBACK", "MOVE_DOUBLE_EDGE" ]

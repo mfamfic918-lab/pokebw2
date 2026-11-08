@@ -13,7 +13,7 @@
             "species": "SPECIES_CLEFFA",
             "form": 0,
             "level": 22,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

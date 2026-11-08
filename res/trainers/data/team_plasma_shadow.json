@@ -13,7 +13,7 @@
             "species": "SPECIES_PAWNIARD",
             "form": 0,
             "level": 49,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "moves": [ "MOVE_METAL_CLAW", "MOVE_FAINT_ATTACK", "MOVE_SLASH", "MOVE_SCARY_FACE" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_PAWNIARD",
             "form": 0,
             "level": 49,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 2,
             "moves": [ "MOVE_METAL_CLAW", "MOVE_FAINT_ATTACK", "MOVE_SLASH", "MOVE_HONE_CLAWS" ]
@@ -31,7 +31,7 @@
             "species": "SPECIES_ABSOL",
             "form": 0,
             "level": 51,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 2,
             "moves": [ "MOVE_NIGHT_SLASH", "MOVE_SLASH", "MOVE_FUTURE_SIGHT", "MOVE_SWORDS_DANCE" ]

@@ -13,7 +13,7 @@
             "species": "SPECIES_CLEFAIRY",
             "form": 0,
             "level": 16,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 2,
             "ability": 1,
             "item": "ITEM_LEFTOVERS",

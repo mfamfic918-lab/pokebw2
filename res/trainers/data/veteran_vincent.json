@@ -13,7 +13,7 @@
             "species": "SPECIES_TYRANITAR",
             "form": 0,
             "level": 70,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_STONE_EDGE", "MOVE_FOCUS_BLAST", "MOVE_ICE_BEAM", "MOVE_FIRE_BLAST" ]

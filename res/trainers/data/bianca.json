@@ -14,7 +14,7 @@
             "species": "SPECIES_MUSHARNA",
             "form": 0,
             "level": 40,
-            "difficulty": 250,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "moves": [ "MOVE_PSYCHIC", "MOVE_ENERGY_BALL", "MOVE_HYPNOSIS", "MOVE_SHADOW_BALL" ]
@@ -23,7 +23,7 @@
             "species": "SPECIES_STOUTLAND",
             "form": 0,
             "level": 38,
-            "difficulty": 250,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "moves": [ "MOVE_ICE_FANG", "MOVE_FIRE_FANG", "MOVE_THUNDER_FANG", "MOVE_RETURN" ]
@@ -32,7 +32,7 @@
             "species": "SPECIES_MIENFOO",
             "form": 0,
             "level": 38,
-            "difficulty": 250,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "moves": [ "MOVE_DRAIN_PUNCH", "MOVE_FAKE_OUT", "MOVE_U_TURN", "MOVE_ACROBATICS" ]

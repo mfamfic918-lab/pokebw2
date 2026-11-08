@@ -13,7 +13,7 @@
             "species": "SPECIES_ELECTABUZZ",
             "form": 0,
             "level": 54,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_THUNDERBOLT", "MOVE_LOW_KICK", "MOVE_THUNDER_WAVE", "MOVE_FACADE" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_PROBOPASS",
             "form": 0,
             "level": 54,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "moves": [ "MOVE_FLASH_CANNON", "MOVE_DISCHARGE", "MOVE_THUNDER_WAVE", "MOVE_POWER_GEM" ]

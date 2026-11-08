@@ -4,7 +4,7 @@
     "class": "TRAINER_CLASS_BLACK_BELT",
     "battle_style": "BTL_STYLE_SINGLE",
     "items": [],
-    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK" ],
+    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT" ],
     "heals": false,
     "money": 8,
     "reward": "ITEM_NONE",
@@ -13,7 +13,7 @@
             "species": "SPECIES_CRUSTLE",
             "form": 0,
             "level": 47,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1
         }

@@ -13,7 +13,7 @@
             "species": "SPECIES_SOLOSIS",
             "form": 0,
             "level": 32,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_GOTHITA",
             "form": 0,
             "level": 32,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

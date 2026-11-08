@@ -13,7 +13,7 @@
             "species": "SPECIES_GRUMPIG",
             "form": 0,
             "level": 39,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_DRIFBLIM",
             "form": 0,
             "level": 39,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

@@ -13,7 +13,7 @@
             "species": "SPECIES_HERDIER",
             "form": 0,
             "level": 25,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_ROGGENROLA",
             "form": 0,
             "level": 25,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

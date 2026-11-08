@@ -13,7 +13,7 @@
             "species": "SPECIES_TYMPOLE",
             "form": 0,
             "level": 42,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_PALPITOAD",
             "form": 0,
             "level": 42,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

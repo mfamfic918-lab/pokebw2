@@ -13,7 +13,7 @@
             "species": "SPECIES_MAGMAR",
             "form": 0,
             "level": 54,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_FLAMETHROWER", "MOVE_BRICK_BREAK", "MOVE_WILL_O_WISP", "MOVE_FAINT_ATTACK" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_CAMERUPT",
             "form": 0,
             "level": 54,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_LAVA_PLUME", "MOVE_ROCK_SLIDE", "MOVE_EARTHQUAKE", "MOVE_WILL_O_WISP" ]

@@ -13,7 +13,7 @@
             "species": "SPECIES_PELIPPER",
             "form": 0,
             "level": 47,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_WAILORD",
             "form": 0,
             "level": 47,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

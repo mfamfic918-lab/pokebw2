@@ -4,7 +4,7 @@
     "class": "TRAINER_CLASS_PARASOL_LADY",
     "battle_style": "BTL_STYLE_SINGLE",
     "items": [],
-    "ai_flags": [ "AI_FLAG_BASIC" ],
+    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT" ],
     "heals": false,
     "money": 8,
     "reward": "ITEM_NONE",
@@ -13,7 +13,7 @@
             "species": "SPECIES_CASTFORM",
             "form": 0,
             "level": 28,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_RAIN_DANCE", "MOVE_POWDER_SNOW", "MOVE_EMBER", "MOVE_WATER_GUN" ]

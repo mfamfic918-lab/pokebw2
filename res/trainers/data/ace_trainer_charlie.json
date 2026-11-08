@@ -13,7 +13,7 @@
             "species": "SPECIES_GALVANTULA",
             "form": 0,
             "level": 63,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_TROPIUS",
             "form": 0,
             "level": 63,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -29,7 +29,7 @@
             "species": "SPECIES_MAMOSWINE",
             "form": 0,
             "level": 63,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

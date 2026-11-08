@@ -13,7 +13,7 @@
             "species": "SPECIES_CLEFABLE",
             "form": 0,
             "level": 54,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

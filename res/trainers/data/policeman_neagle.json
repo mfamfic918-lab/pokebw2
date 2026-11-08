@@ -13,7 +13,7 @@
             "species": "SPECIES_HERDIER",
             "form": 0,
             "level": 22,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_TACKLE", "MOVE_BITE", "MOVE_ODOR_SLEUTH", "MOVE_WORK_UP" ]

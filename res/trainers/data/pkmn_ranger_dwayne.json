@@ -13,7 +13,7 @@
             "species": "SPECIES_WEEPINBELL",
             "form": 0,
             "level": 62,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_LUXRAY",
             "form": 0,
             "level": 62,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -29,7 +29,7 @@
             "species": "SPECIES_URSARING",
             "form": 0,
             "level": 62,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

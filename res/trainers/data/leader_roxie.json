@@ -3,9 +3,9 @@
     "name": "Roxie",
     "class": "TRAINER_CLASS_LEADER_ROXIE",
     "battle_style": "BTL_STYLE_SINGLE",
-    "items": [ "ITEM_SUPER_POTION" ],
+    "items": [ "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE", "ITEM_FULL_RESTORE" ],
     "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT" ],
-    "heals": false,
+    "heals": true,
     "money": 30,
     "reward": "ITEM_NONE",
     "party": [
@@ -13,7 +13,7 @@
             "species": "SPECIES_KOFFING",
             "form": 0,
             "level": 16,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_SMOG", "MOVE_ASSURANCE", "MOVE_TACKLE" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_WHIRLIPEDE",
             "form": 0,
             "level": 18,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "moves": [ "MOVE_VENOSHOCK", "MOVE_POISON_STING", "MOVE_PROTECT", "MOVE_PURSUIT" ]

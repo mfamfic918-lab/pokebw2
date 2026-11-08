@@ -13,7 +13,7 @@
             "species": "SPECIES_ROTOM",
             "form": 0,
             "level": 62,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_BUTTERFREE",
             "form": 0,
             "level": 62,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -29,7 +29,7 @@
             "species": "SPECIES_ALOMOMOLA",
             "form": 0,
             "level": 62,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

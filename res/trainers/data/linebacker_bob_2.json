@@ -13,7 +13,7 @@
             "species": "SPECIES_SAWK",
             "form": 0,
             "level": 62,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_THROH",
             "form": 0,
             "level": 62,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -29,7 +29,7 @@
             "species": "SPECIES_HARIYAMA",
             "form": 0,
             "level": 62,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

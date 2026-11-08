@@ -4,7 +4,7 @@
     "class": "TRAINER_CLASS_GENTLEMAN",
     "battle_style": "BTL_STYLE_SINGLE",
     "items": [ "ITEM_HYPER_POTION" ],
-    "ai_flags": [ "AI_FLAG_BASIC" ],
+    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT" ],
     "heals": false,
     "money": 50,
     "reward": "ITEM_NONE",
@@ -13,7 +13,7 @@
             "species": "SPECIES_LILLIPUP",
             "form": 0,
             "level": 17,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

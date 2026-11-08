@@ -4,7 +4,7 @@
     "class": "TRAINER_CLASS_PARASOL_LADY",
     "battle_style": "BTL_STYLE_TRIPLE",
     "items": [],
-    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_TAG_STRATEGY" ],
+    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT", "AI_FLAG_TAG_STRATEGY" ],
     "heals": false,
     "money": 8,
     "reward": "ITEM_NONE",
@@ -13,7 +13,7 @@
             "species": "SPECIES_CASTFORM",
             "form": 0,
             "level": 60,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_RAIN_DANCE", "MOVE_WEATHER_BALL", "MOVE_THUNDER", "MOVE_ICE_BEAM" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_JOLTEON",
             "form": 0,
             "level": 60,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_THUNDER", "MOVE_SHADOW_BALL", "MOVE_PIN_MISSILE", "MOVE_DOUBLE_KICK" ]
@@ -31,7 +31,7 @@
             "species": "SPECIES_LUDICOLO",
             "form": 0,
             "level": 60,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "moves": [ "MOVE_HYDRO_PUMP", "MOVE_MEGA_DRAIN", "MOVE_UPROAR", "MOVE_ZEN_HEADBUTT" ]

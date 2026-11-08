@@ -13,7 +13,7 @@
             "species": "SPECIES_GIGALITH",
             "form": 0,
             "level": 60,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "item": "ITEM_NORMAL_GEM",

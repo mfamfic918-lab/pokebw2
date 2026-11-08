@@ -13,7 +13,7 @@
             "species": "SPECIES_ROTOM",
             "form": 0,
             "level": 64,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_DISCHARGE", "MOVE_SHADOW_BALL", "MOVE_THUNDER_WAVE", "MOVE_REFLECT" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_WEEZING",
             "form": 0,
             "level": 64,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_SLUDGE_BOMB", "MOVE_FIRE_BLAST", "MOVE_MEMENTO", "MOVE_WILL_O_WISP" ]
@@ -31,7 +31,7 @@
             "species": "SPECIES_GENGAR",
             "form": 0,
             "level": 64,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_SHADOW_BALL", "MOVE_DARK_PULSE", "MOVE_FOCUS_BLAST", "MOVE_WILL_O_WISP" ]
@@ -40,7 +40,7 @@
             "species": "SPECIES_EELEKTROSS",
             "form": 0,
             "level": 64,
-            "difficulty": 100,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_WILD_CHARGE", "MOVE_DRAGON_CLAW", "MOVE_GASTRO_ACID", "MOVE_COIL" ]

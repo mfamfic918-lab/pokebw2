@@ -13,7 +13,7 @@
             "species": "SPECIES_CROBAT",
             "form": 0,
             "level": 64,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_CROSS_POISON", "MOVE_U_TURN", "MOVE_RAIN_DANCE", "MOVE_SUNNY_DAY" ]
@@ -22,7 +22,7 @@
             "species": "SPECIES_MAGMORTAR",
             "form": 0,
             "level": 64,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_FLARE_BLITZ", "MOVE_PSYCHIC", "MOVE_THUNDERBOLT", "MOVE_WILL_O_WISP" ]
@@ -31,7 +31,7 @@
             "species": "SPECIES_LEAFEON",
             "form": 0,
             "level": 64,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0,
             "moves": [ "MOVE_LEAF_BLADE", "MOVE_X_SCISSOR", "MOVE_QUICK_ATTACK", "MOVE_SWORDS_DANCE" ]

@@ -4,7 +4,7 @@
     "class": "TRAINER_CLASS_SCIENTIST_F_46",
     "battle_style": "BTL_STYLE_SINGLE",
     "items": [ "ITEM_X_DEFEND" ],
-    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EXPERT" ],
+    "ai_flags": [ "AI_FLAG_BASIC", "AI_FLAG_EVAL_ATTACK", "AI_FLAG_EXPERT" ],
     "heals": false,
     "money": 12,
     "reward": "ITEM_NONE",
@@ -13,7 +13,7 @@
             "species": "SPECIES_VENIPEDE",
             "form": 0,
             "level": 17,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_KOFFING",
             "form": 0,
             "level": 17,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

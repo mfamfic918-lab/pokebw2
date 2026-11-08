@@ -13,7 +13,7 @@
             "species": "SPECIES_SIGILYPH",
             "form": 0,
             "level": 26,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_TIRTOUGA",
             "form": 0,
             "level": 26,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -29,7 +29,7 @@
             "species": "SPECIES_ARCHEN",
             "form": 0,
             "level": 26,
-            "difficulty": 0,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

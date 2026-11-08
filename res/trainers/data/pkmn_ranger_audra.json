@@ -13,7 +13,7 @@
             "species": "SPECIES_WIGGLYTUFF",
             "form": 0,
             "level": 64,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -21,7 +21,7 @@
             "species": "SPECIES_GIRAFARIG",
             "form": 0,
             "level": 64,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         },
@@ -29,7 +29,7 @@
             "species": "SPECIES_VILEPLUME",
             "form": 0,
             "level": 64,
-            "difficulty": 50,
+            "difficulty": 255,
             "gender": 0,
             "ability": 0
         }

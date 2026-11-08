@@ -13,7 +13,7 @@
             "species": "SPECIES_AGGRON",
             "form": 0,
             "level": 60,
-            "difficulty": 200,
+            "difficulty": 255,
             "gender": 0,
             "ability": 1,
             "item": "ITEM_ROCKY_HELMET",
